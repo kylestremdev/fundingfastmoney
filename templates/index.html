@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Funding Fast Money</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <div id="main">
+      <div id="header" class="row">
+        <div id="logo" class="col-md-6">
+          <p><span>&nbsp;&nbsp;$&nbsp;&nbsp;</span> Funding Fast Money</p>
+        </div>
+        <div id="phone" class="col-md-6">
+          <p>(866) 292-0509</p>
+        </div>
+      </div>
+
+      <div id="content">
+        <div id="form_group">
+          <h3>Contact Us</h3>
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              <ul class="flashes">
+                {% for category, message in messages %}
+                <li class="{{category}}">{{message}}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          {% endwith %}
+          <form action='/submit' method='post'>
+            <div class="form-group form-input half">
+              <label for="first_name">First Name*</label>
+              <input type="text" class="form-control" name="first_name">
+            </div><!--
+            --><div class="form-group form-input half">
+              <label for="last_name">Last Name*</label>
+              <input type="text" class="form-control" name="last_name">
+            </div><!--
+            --><div class="form-group form-input half">
+              <label for="phone_number">Phone Number*</label>
+              <input type="text" class="form-control" name="phone_number">
+            </div><!--
+            --><div class="form-group form-input half">
+              <label for="email">Email Address*</label>
+              <input type="text" class="form-control" name="email">
+            </div><!--
+            --><div class="form-group form-input full">
+              <label for="loan_type">Loan Purpose*</label>
+              <select class="form-control" name="loan_type">
+                <option value="Buy Investment Property">Buy Investment Property</option>
+                <option value="Refinance Investment Property">Refinance Investment Property</option>
+                <option value="Buy/Refinance Investment Property">Buy/Refinance Investment Property</option>
+                <option value="Fix and Flip">Fix &amp; Flip</option>
+                <option value="Other">Other</option>
+              </select>
+            </div><!--
+            --><div class="form-group form-input full">
+              <label for="extra_info">What can we help with?</label>
+              <textarea class="form-control" name="extra_info"></textarea>
+            </div>
+            <div class="form-group form-input full">
+              <input type="submit" class="btn btn-primary" value="Submit" />
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="bullets" class="row">
+        <h3 class="col-md-6">We Do The Following:</h3>
+        <ul class="list col-md-6">
+          <li><span>&nbsp;&nbsp;$&nbsp;&nbsp;</span> No Income Verification</li>
+          <li><span>&nbsp;&nbsp;$&nbsp;&nbsp;</span> Foreign Nationals Ok</li>
+          <li><span>&nbsp;&nbsp;$&nbsp;&nbsp;</span> Low Credit Scores Ok</li>
+          <li><span>&nbsp;&nbsp;$&nbsp;&nbsp;</span> Fund In 7 Days</li>
+          <li><span>&nbsp;&nbsp;$&nbsp;&nbsp;</span> Land, Commercial, Residential Income Property, Mixed Use Property</li>
+        </ul>
+      </div>
+
+      <div id="footer" class="row">
+        <p class="col-md-12">BRE License #01365645</p>
+      </div>
+    </div>
+  </body>
+</html>
