@@ -45,6 +45,7 @@
 
 #logo p span {
   background-color: green;
+  font-family: sans-serif;
   display: inline-block;
   width: auto;
   border-radius: 50%;
